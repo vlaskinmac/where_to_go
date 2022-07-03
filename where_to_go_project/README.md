@@ -2,7 +2,7 @@
 
 Фронтенд для будущего сайта о самых интересных местах в Москве. Авторский проект Артёма.
 
-![&#x41A;&#x443;&#x434;&#x430; &#x43F;&#x43E;&#x439;&#x442;&#x438;](../../../../../../../Downloads/where-to-go-frontend-master/.gitbook/assets/site.png)
+![&#x41A;&#x443;&#x434;&#x430; &#x43F;&#x43E;&#x439;&#x442;&#x438;](https://github.com/vlaskinmac/where-to-go-frontend/blob/master/.gitbook/assets/site.png?raw=true)
 
 [Демка сайта](https://devmanorg.github.io/where-to-go-frontend/).
 
@@ -23,7 +23,7 @@ $ python -m http.server 8000
 
 Внизу справа на странице можно включить отладочный режим логгирования.
 
-![debug mode](../../../../../../../Downloads/where-to-go-frontend-master/.gitbook/assets/debug-option.png)
+![debug mode](https://github.com/vlaskinmac/where-to-go-frontend/blob/master/.gitbook/assets/debug-option.png)
 
 Настройки сохраняются в Local Storage браузера и не пропадают после обновления страницы. Чтобы сбросить настройки удалите ключи из Local Storage с помощью Chrome Dev Tools —&gt; Вкладка Application —&gt; Local Storage.
 
