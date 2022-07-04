@@ -43,21 +43,19 @@
     {
     "type": "FeatureCollection",
     "features": [
-//    {
-//    "type": "Feature",
-//    "geometry": {
-//    "type": "Point",
-//    "coordinates": [37.62, 55.793676]
-//    },
-//    "properties": {
-//     "title": "«Легенды Москвы",
-//     "placeId": "moscow_legends",
-//
-//    "detailsUrl": "https://raw.githubusercontent.com/devmanorg/where-to-go-frontend/master/places/moscow_legends.json"
-//    }
-//
-//    }
-//    ,
+    {
+    "type": "Feature",
+    "geometry": {
+    "type": "Point",
+    "coordinates": [37.62, 55.793676]
+    },
+      "properties": {
+      "title": "{{ title }}",
+     "placeId": "{{ placeId }}",
+     "detailsUrl": "{{ detailsUrl }}"
+    }
+    }
+    ,
     {
     "type": "Feature",
     "geometry": {
@@ -66,9 +64,9 @@
     },
 
     "properties": {
-    "title": "Крыши24.рф",
-    "placeId": "roofs24",
-    "detailsUrl": "{{ properties }}"
+      "title": "{{ title }}",
+      "placeId": "{{ placeId }}",
+      "detailsUrl": "{{ detailsUrl }}"
     }
     }
     ]

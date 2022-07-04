@@ -5,19 +5,17 @@ from django.db import models
 
 class Place(models.Model):
     title = models.CharField(max_length=250, verbose_name="Place")
-    image = models.ForeignKey("Image",  null=True, on_delete=models.SET_NULL, related_name='images')
-    description_short = models.TextField()
-    description_long = models.TextField()
-    lng = models.FloatField()
-    lat = models.FloatField()
+    details_place = models.TextField(verbose_name="Места")
+    title_place = models.CharField(max_length=250, verbose_name="Название проекта")
+    placeId = models.CharField(max_length=250, verbose_name="ID проекта")
 
     def __str__(self):
-        return f"{self.title} {self.description_short} {self.description_long}"
+        return f"{self.title}"
 
 
 class Image(models.Model):
     title = models.CharField(max_length=250, verbose_name="image")
-    image = models.ImageField(null=True)
+    image = models.ImageField()
     id_image = models.AutoField(primary_key=True, verbose_name="ID")
 
     def __str__(self):
