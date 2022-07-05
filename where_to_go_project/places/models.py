@@ -4,22 +4,31 @@ from django.db import models
 
 
 class Place(models.Model):
-    title = models.CharField(max_length=250, verbose_name="Place")
-    details_place = models.TextField(verbose_name="Места")
-    title_place = models.CharField(max_length=250, verbose_name="Название проекта")
-    placeId = models.CharField(max_length=250, verbose_name="ID проекта")
+    title = models.CharField(max_length=250, verbose_name="Название")
+    description_short = models.TextField(
+        blank=True, verbose_name='Краткое описание')
+    description_long = models.TextField(
+        blank=True, verbose_name='Полное описание')
+    lng = models.FloatField(verbose_name='Долгота')
+    lat = models.FloatField(verbose_name='Широта')
+
 
     def __str__(self):
-        return f"{self.title}"
+        return self.title
 
 
-class Image(models.Model):
+class PlaceImage(models.Model):
     title = models.CharField(max_length=250, verbose_name="image")
     image = models.ImageField()
-    id_image = models.AutoField(primary_key=True, verbose_name="ID")
+    id_image = models.AutoField(primary_key=True, db_index=True, verbose_name="ID")
+    place = models.ForeignKey(
+        'Place',
+        on_delete=models.CASCADE,
+        related_name='imges'
+    )
 
     def __str__(self):
-        return f"{self.title}"
+        return f'{self.id_image} {self.place.title}'
 
     class Meta:
         ordering = ('pk',)
