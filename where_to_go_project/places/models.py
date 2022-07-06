@@ -18,8 +18,13 @@ class Place(models.Model):
 
 class PlaceImage(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название проекта")
-    image = models.ImageField()
-    id_image = models.AutoField(primary_key=True, db_index=True, verbose_name="ID")
+    image = models.ImageField(blank=True, null=True)
+    id_image = models.PositiveSmallIntegerField(
+        null=False,
+        blank=False,
+        default=0,
+        db_index=True
+    )
 
     place = models.ForeignKey(
         'Place',
@@ -31,6 +36,4 @@ class PlaceImage(models.Model):
         return f'{self.id_image} {self.place.title}'
 
     class Meta:
-        verbose_name = 'Фотография'
-        verbose_name_plural = 'Фотографии'
-        ordering = ('id_image',)
+        ordering = ['id_image']
