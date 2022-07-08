@@ -29,7 +29,7 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = env.bool('DEBUG', default=False)
-# ALLOWED_HOSTS = []
+
 ALLOWED_HOSTS = env.list(
     "ALLOWED_HOSTS",
     subcast=str,
@@ -85,12 +85,13 @@ WSGI_APPLICATION = 'where_to_go_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+DATABASES = {"default": env.dj_db_url("DATABASE_URL")}
 
 
 # Password validation
@@ -129,9 +130,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL = os.path.join(BASE_DIR, 'static/')
 # STATICFILES_DIRS = ['/uploads_static/']
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # место хранения на сервере
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # место хранения на сервере
 
-MEDIA_URL = os.path.join(BASE_DIR, 'media') # внешний адрес для раздачи браузеру
+MEDIA_URL = os.path.join(BASE_DIR, 'media/') # внешний адрес для раздачи браузеру
