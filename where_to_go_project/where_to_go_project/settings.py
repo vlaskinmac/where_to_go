@@ -134,4 +134,4 @@ STATIC_URL = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = ['/uploads_static/']
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # место хранения на сервере
 
-MEDIA_URL = '/uploads/' # внешний адрес для раздачи браузеру
+MEDIA_URL = os.path.join(BASE_DIR, 'media') # внешний адрес для раздачи браузеру
