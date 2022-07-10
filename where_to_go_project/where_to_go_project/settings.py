@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'r5en=j=e4a8@+0_w@6qbrxfyjr)4*t#@x(5f&nm7@q^_@x^x71'
+
 SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -81,16 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'where_to_go_project.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {"default": env.dj_db_url("DATABASE_URL")}
 
 
@@ -132,7 +122,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = os.path.join(BASE_DIR, 'static/')
-# STATICFILES_DIRS = ['/uploads_static/']
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # место хранения на сервере
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # место хранения на сервере
 MEDIA_URL = os.path.join(BASE_DIR, 'media/') # внешний адрес для раздачи браузеру
