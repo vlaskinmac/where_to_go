@@ -19,9 +19,6 @@ class PlaceImage(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название проекта")
     image = models.ImageField(blank=True, null=True)
     id_image = models.PositiveSmallIntegerField(
-        null=False,
-        blank=False,
-        default=0,
         db_index=True
     )
 
