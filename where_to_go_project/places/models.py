@@ -22,7 +22,7 @@ class Place(models.Model):
 class PlaceImage(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название проекта")
     image = models.ImageField(blank=True, null=True, verbose_name="изображение")
-    image_id = models.PositiveSmallIntegerField(
+    image_number = models.PositiveSmallIntegerField(
         db_index=True
     )
 
@@ -33,9 +33,9 @@ class PlaceImage(models.Model):
     )
 
     def __str__(self):
-        return f'{self.image_id} {self.place.title}'
+        return f'{self.image_number} {self.place.title}'
 
     class Meta:
-        ordering = ['image_id']
+        ordering = ['image_number']
         verbose_name = 'Изображение места'
         verbose_name_plural = 'Изображение мест'

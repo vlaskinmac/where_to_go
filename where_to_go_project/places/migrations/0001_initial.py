@@ -29,13 +29,13 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=250, verbose_name='Название проекта')),
                 ('image', models.ImageField(blank=True, null=True, upload_to='')),
-                ('image_id', models.PositiveSmallIntegerField(db_index=True, default=0)),
+                ('image_number', models.PositiveSmallIntegerField(db_index=True, default=0)),
                 ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='imges', to='places.place')),
             ],
             options={
                 'verbose_name': 'Фотография',
                 'verbose_name_plural': 'Фотографии',
-                'ordering': ['image_id'],
+                'ordering': ['image_number'],
             },
         ),
     ]

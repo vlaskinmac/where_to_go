@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='placeimage',
-            options={'ordering': ['image_id']},
+            options={'ordering': ['image_number']},
         ),
         migrations.AlterField(
             model_name='place',

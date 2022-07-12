@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='placeimage',
-            name='image_id',
+            name='image_number',
             field=models.PositiveSmallIntegerField(db_index=True),
         ),
     ]

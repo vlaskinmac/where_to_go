@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterModelOptions(
             name='placeimage',
-            options={'ordering': ['image_id'], 'verbose_name': 'Изображение места', 'verbose_name_plural': 'Изображение мест'},
+            options={'ordering': ['image_number'], 'verbose_name': 'Изображение места', 'verbose_name_plural': 'Изображение мест'},
         ),
         migrations.AlterField(
             model_name='placeimage',
