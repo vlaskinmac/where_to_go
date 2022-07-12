@@ -15,7 +15,6 @@
 ![](https://user-images.githubusercontent.com/78322994/177937549-c7a718fe-f773-419f-8569-eb8864bb4c07.png)
 
 
-[Демка сайта](https://devmanorg.github.io/where-to-go-frontend/).
 
 * Добавьте изображения локации. После добавления изображения можно сортировать путем перетаскивания мышкой.
 
