@@ -10,7 +10,6 @@ class ImageAdmin(SortableInlineAdminMixin, admin.TabularInline):
     readonly_fields = ["preview_image"]
     fields = ['image', 'preview_image']
 
-
     def preview_image(self, obj):
         return format_html('<img src="{url}" height={height} />', url=obj.image.url, height='200px',)
     preview_image.short_description = "Фотки"
