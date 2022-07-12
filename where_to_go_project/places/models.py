@@ -21,7 +21,7 @@ class Place(models.Model):
 
 class PlaceImage(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название проекта")
-    image = models.ImageField(blank=True, null=True, verbose_name="изображение")
+    image = models.ImageField(blank=True, verbose_name="изображение")
     image_number = models.PositiveSmallIntegerField(
         db_index=True
     )
