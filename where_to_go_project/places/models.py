@@ -21,15 +21,15 @@ class Place(models.Model):
 
 class PlaceImage(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название проекта")
-    image = models.ImageField(blank=True, verbose_name="изображение")
+    image = models.ImageField(verbose_name="Изображение")
     image_number = models.PositiveSmallIntegerField(
-        db_index=True
+        db_index=True, verbose_name="Номер изображения"
     )
 
     place = models.ForeignKey(
         'Place',
         on_delete=models.CASCADE,
-        related_name='imges'
+        related_name='imges', verbose_name="Изображения"
     )
 
     def __str__(self):
